@@ -408,7 +408,7 @@ while True:
     for a in range(NUMBER_OF_TRIES):  # Number of tries
         board = ["-", "-", "-", "-", "-"]  # Result of user's guess
 
-        while True:  # Repeat until recieving a valid answer
+        while True:  # Repeat until receiving a valid answer
             guess = input(f"{a + 1} > ").lower()
 
             if len(guess) != 5:
