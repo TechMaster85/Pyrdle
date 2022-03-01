@@ -1,3 +1,7 @@
+# Pyrdle
+# (C) 2022 William Starrs.
+# Licensed under the GNU GPL v3 (see LICENSE).
+
 from random import choice
 
 # Dictionary copy and pasted from create_dictionary.py output.
@@ -391,8 +395,8 @@ dictionary = [
     "youth", "yummy", "zebra", "zeros", "zesty", "zippy", "zoned", "zones",
 ]
 
-DEBUG_MODE = False # Gives you the word while playing
-NUMBER_OF_TRIES = 6 # 6 by default
+DEBUG_MODE = False  # Gives you the word while playing
+NUMBER_OF_TRIES = 6  # 6 by default
 
 while True:
 
@@ -406,7 +410,7 @@ while True:
 
         while True:  # Repeat until recieving a valid answer
             guess = input(f"{a + 1} > ").lower()
-            
+
             if len(guess) != 5:
                 print("That's not 5 letters!")
             elif guess not in dictionary:
@@ -416,11 +420,11 @@ while True:
 
         for i in range(5):  # For each letter in the guess
             if guess[i] == answer[i]:
-                # Checks letters in correct spots
+                # Capitalizes letters in correct spots
                 board[i] = guess[i].capitalize()
-            
+
             else:
-                # Checks letters in answer but not in correct spots
+                # Lowercases letters in answer but not in correct spots
                 for j in range(5):
                     if guess[i] == answer[j]:
                         board[i] = guess[i].lower()
@@ -429,7 +433,7 @@ while True:
 
         if DEBUG_MODE:
             # Give the answer for 'testing purposes'
-            print(f'd > {answer}')
+            print(f"d > {answer}")
 
         if ''.join(board) == answer.upper():
             # If the board (all uppercase) is the same as the uppercase answer
